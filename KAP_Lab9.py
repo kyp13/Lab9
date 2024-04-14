@@ -17,13 +17,18 @@ def decoder(password):
     return decoded_password
 
 def main():
-    x = input('Would you like to encode (1) or decode (2)?')
-    if x == 1:
-        y = input('What would you like to be encoded?')
-        encode(y)
-    elif x == 2:
-        z = input('What would you like to be decoded?')
-        decoder(y)
+    while True:
+        print('Menu\n-------------\n1. Encode\n2. Decode\n3.Quit')
+        x = int(input('Please enter an option:'))
+        if x == 1:
+            y = input('Please enter your password to encode:')
+            encoded = encode(y)
+            print('Your password has been encoded and stored!')
+        elif x == 2:
+            decoded = decoder(encoded)
+            print(f"The encoded password is {encoded}, and the original password is {decoded}")
+        elif x==3:
+            break
 
 if __name__=='__main__':
     main()
